@@ -1,9 +1,13 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { increment, decrement, reset } from './store/counter/action'
+import {
+  increment,
+  decrement,
+  reset,
+  incrementAsync,
+} from './store/counter/action'
 
 function App(props) {
-  console.log(props)
   return (
     <div>
       <div>
@@ -11,6 +15,7 @@ function App(props) {
         <button onClick={props.increment}>+1</button>
         <button onClick={props.decrement}>-1</button>
         <button onClick={props.reset}>reset</button>
+        <button onClick={props.incrementAsync}>increment async</button>
       </div>
     </div>
   )
@@ -28,6 +33,9 @@ const mapDispatchToProps = (dispatch) => ({
 
   reset() {
     dispatch(reset())
+  },
+  incrementAsync() {
+    dispatch(incrementAsync())
   },
 })
 
